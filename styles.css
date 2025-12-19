@@ -15,21 +15,23 @@ body {
 }
 
 .floating-hearts {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
+    overflow: hidden;
     z-index: -1;
+    pointer-events: none;
 }
 
 .heart {
     position: absolute;
-    font-size: 2rem;
-    opacity: 0.7;
-    animation: float 10s linear infinite;
-    text-shadow: 0 0 15px #ff69b4, 0 0 30px #ff69b4;
+    bottom: -50px;
+    font-size: 24px;
+    animation: floatUp 6s linear infinite;
+    opacity: 0;
+    text-shadow: 0 0 10px rgba(255, 105, 180, 0.8), 0 0 20px rgba(255, 105, 180, 0.6), 0 0 30px rgba(255, 105, 180, 0.4);
 }
 
 .heart:nth-child(1) { left: 5%; animation-delay: 0s; }
@@ -50,6 +52,22 @@ body {
 .heart:nth-child(16) { left: 80%; animation-delay: 7.5s; }
 .heart:nth-child(17) { left: 85%; animation-delay: 8s; }
 .heart:nth-child(18) { left: 90%; animation-delay: 8.5s; }
+.heart:nth-child(19) { left: 5%; animation-delay: 9s; }
+.heart:nth-child(20) { left: 10%; animation-delay: 9.5s; }
+.heart:nth-child(21) { left: 15%; animation-delay: 10s; }
+.heart:nth-child(22) { left: 20%; animation-delay: 10.5s; }
+.heart:nth-child(23) { left: 25%; animation-delay: 11s; }
+.heart:nth-child(24) { left: 30%; animation-delay: 11.5s; }
+.heart:nth-child(25) { left: 35%; animation-delay: 12s; }
+.heart:nth-child(26) { left: 40%; animation-delay: 12.5s; }
+.heart:nth-child(27) { left: 45%; animation-delay: 13s; }
+.heart:nth-child(28) { left: 50%; animation-delay: 13.5s; }
+.heart:nth-child(29) { left: 55%; animation-delay: 14s; }
+.heart:nth-child(30) { left: 60%; animation-delay: 14.5s; }
+.heart:nth-child(31) { left: 65%; animation-delay: 15s; }
+.heart:nth-child(32) { left: 70%; animation-delay: 15.5s; }
+.heart:nth-child(33) { left: 75%; animation-delay: 16s; }
+.heart:nth-child(34) { left: 80%; animation-delay: 16.5s; }
 
 .floating-lines {
     position: absolute;
@@ -125,6 +143,35 @@ body {
     100% {
         transform: translateY(-10vh) translateX(0) rotate(360deg);
         opacity: 0;
+    }
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes sparkle {
+    0% {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(-50%) scale(1.2);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
     }
 }
 
