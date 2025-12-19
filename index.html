@@ -14,6 +14,11 @@
     </style>
 </head>
 <body>
+    <button id="dark-mode-toggle" style="position: fixed; top: 10px; left: 10px; z-index: 1000; background: rgba(255, 255, 255, 0.9); border: 2px solid #ff69b4; border-radius: 50%; width: 50px; height: 50px; font-size: 24px; cursor: pointer; transition: background-color 0.3s; position: relative;">
+        <span id="moon-icon" style="opacity: 1; transition: opacity 0.5s ease; position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">🌙</span>
+        <span id="sun-icon" style="opacity: 0; transition: opacity 0.5s ease; position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">☀️</span>
+    </button>
+
     <div class="floating-hearts">
         <div class="heart">❤️</div>
         <div class="heart">💖</div>
@@ -206,19 +211,22 @@ Thank you for being in my life, and I pray we stay together forever.</p>
 
         <section id="timer">
             <h2>Our Time Together</h2>
-            <div class="timer-container">
-                <div class="timer-subsection">
-                    <h3>How Long We've Known Each Other</h3>
-                    <p>Since March 5, 2020</p>
-                    <div id="known-timer-display" class="hearts">
-                        🫂 Years: <span id="known-years">0</span> Months: <span id="known-months">0</span> Days: <span id="known-days">0</span> Hours: <span id="known-hours">0</span> Minutes: <span id="known-minutes">0</span> Seconds: <span id="known-seconds">0</span>
+            <div class="timer-wrapper" style="position: relative;">
+                <div class="timer-overlay" onclick="revealTimer()" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.8); display: flex; justify-content: center; align-items: center; cursor: pointer; z-index: 1; font-size: 24px; font-weight: bold; transition: opacity 0.5s ease;">Click Me 🌚 </div>
+                <div class="timer-container" style="filter: blur(5px); transition: filter 0.5s ease;">
+                    <div class="timer-subsection">
+                        <h3>How Long We've Known Each Other</h3>
+                        <p>Since March 5, 2020</p>
+                        <div id="known-timer-display" class="hearts">
+                         🫂  <span id="known-years">0</span> Years <span id="known-months">0</span> Months <span id="known-days">0</span> Days <span id="known-hours">0</span> Hours <span id="known-minutes">0</span> Minutes <span id="known-seconds">0</span> Seconds
+                        </div>
                     </div>
-                </div>
-                <div class="timer-subsection">
-                    <h3>How Long We've Been Together</h3>
-                    <p>Since April 28, 2025</p>
-                    <div id="together-timer-display" class="hearts">
+                    <div class="timer-subsection">
+                        <h3>How Long We've Been Together</h3>
+                        <p>Since April 28, 2025</p>
+                        <div id="together-timer-display" class="hearts">
                         👩‍❤️‍💋‍👨 <span id="together-years">0</span> Years <span id="together-months">0</span> Months <span id="together-days">0</span> Days <span id="together-hours">0</span> Hours <span id="together-minutes">0</span> Minutes <span id="together-seconds">0</span> Seconds
+                        </div>
                     </div>
                 </div>
             </div>
@@ -265,15 +273,15 @@ Thank you for being in my life, and I pray we stay together forever.</p>
         showSlide(currentSlide);
 
         
-        const knownStartDate = new Date('2020-03-05T00:00:00'); 
-        const togetherStartDate = new Date('2025-04-28T00:00:00'); 
+        const knownStartDate = new Date('2020-03-05T00:00:00');
+        const togetherStartDate = new Date('2025-04-28T00:00:00');
 
         function updateTimer(startDate, prefix) {
             const now = new Date();
             const diff = now - startDate;
 
             if (diff < 0) {
-                
+
                 document.getElementById(prefix + '-years').textContent = '0';
                 document.getElementById(prefix + '-months').textContent = '0';
                 document.getElementById(prefix + '-days').textContent = '0';
@@ -332,6 +340,32 @@ Thank you for being in my life, and I pray we stay together forever.</p>
             document.getElementById('message-modal').style.display = 'none';
             document.body.style.overflow = 'auto';
         }
+
+        function toggleDarkMode() {
+            const body = document.body;
+            const moonIcon = document.getElementById('moon-icon');
+            const sunIcon = document.getElementById('sun-icon');
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                moonIcon.style.opacity = '0';
+                sunIcon.style.opacity = '1';
+            } else {
+                moonIcon.style.opacity = '1';
+                sunIcon.style.opacity = '0';
+            }
+        }
+
+        function revealTimer() {
+            const overlay = document.querySelector('.timer-overlay');
+            const timerContainer = document.querySelector('.timer-container');
+            overlay.style.opacity = '0';
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 500);
+            timerContainer.style.filter = 'none';
+        }
+
+        document.getElementById('dark-mode-toggle').addEventListener('click', toggleDarkMode);
     </script>
 </body>
 </html>
