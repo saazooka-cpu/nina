@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Together Forever</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=SF+Pro+Text:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'TintaArabic-Bold';
+            src: url('fonts/TintaArabic-Bold.ttf') format('truetype');
+        }
+    </style>
+</head>
+<body>
+    <button id="dark-mode-toggle" style="position: fixed; top: 10px; left: 10px; z-index: 1000; background: rgba(255, 255, 255, 0.9); border: 2px solid #ff69b4; border-radius: 50%; width: 50px; height: 50px; font-size: 24px; cursor: pointer; transition: background-color 0.3s; position: relative;">
+        <span id="moon-icon" style="opacity: 1; transition: opacity 0.5s ease; position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">🌙</span>
+        <span id="sun-icon" style="opacity: 0; transition: opacity 0.5s ease; position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">☀️</span>
+    </button>
+
+    <div class="floating-hearts">
+        <div class="heart">❤️</div>
+        <div class="heart">💖</div>
+        <div class="heart">💕</div>
+        <div class="heart">💗</div>
+        <div class="heart">💓</div>
+        <div class="heart">💞</div>
+        <div class="heart">💘</div>
+        <div class="heart">💝</div>
+        <div class="heart">🫂</div>
+        <div class="heart">😘</div>
+        <div class="heart">💋</div>
+        <div class="heart">🥰</div>
+        <div class="heart">😍</div>
+        <div class="heart">🤗</div>
+        <div class="heart">💑</div>
+        <div class="heart">👩‍❤️‍💋‍👨</div>
+        <div class="heart">💏</div>
+        <div class="heart">💌</div>
+        <div class="heart">🌹</div>
+        <div class="heart">🌸</div>
+        <div class="heart">🌺</div>
+        <div class="heart">🌷</div>
+        <div class="heart">🌼</div>
+        <div class="heart">💐</div>
+        <div class="heart">🌟</div>
+        <div class="heart">✨</div>
+        <div class="heart">💫</div>
+        <div class="heart">⭐</div>
+        <div class="heart">🌙</div>
+        <div class="heart">☀️</div>
+        <div class="heart">🌈</div>
+        <div class="heart">🦋</div>
+        <div class="heart">🐝</div>
+        <div class="heart">🦄</div>
+    </div>
+
+
+
+    <div class="secret-box" onclick="openSecret()">Don't open me</div>
+
+    <div id="secret-modal" class="modal">
+        <div class="modal-content">
+            <p>Are you sure?</p>
+            <button onclick="confirmSecret()">Yes</button>
+            <button onclick="closeModal()">No</button>
+        </div>
+    </div>
+
+    <div id="message-modal" class="modal">
+        <div class="modal-content">
+            <button onclick="closeMessageModal()">Close</button>
+            <p>You’re the biggest and cutest cow in my life . 🐄❤️</p>
+            <video id="secret-video" controls autoplay muted style="width: 100%; max-width: 500px; border-radius: 10px; margin-top: 10px;">
+                <source src="memories/cow.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <header>
+        <h1>To My Dearest Haneen</h1>
+        <p>With all my heart, forever</p>
+
+    </header>
+
+    <main>
+        <section id="memories">
+            <h2>Our Cherished Memories</h2>
+            <div class="carousel">
+                <button class="carousel-btn prev" onclick="prevSlide()">&#10094;</button>
+                <div class="carousel-container">
+                    <div class="carousel-slide">
+                        <img src="memories/IMG-20251219-WA0001.jpg" alt="Memory 1">
+                        <p class="caption">Our first meeting, our very first date -unforgettable.</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="memories/IMG-20251219-WA0002.jpg" alt="Memory 2">
+                        <p class="caption">At Donia’s engagement, I can’t even describe how beautiful you were that day                
+                             الفستان كان خطييير</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="memories/IMG-20251219-WA0003.jpg" alt="Memory 3">
+                        <p class="caption">احلي توكه يحبيبه قلبي</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="memories/IMG-20251219-WA0004.jpg" alt="Memory 4">
+                        <p class="caption">A day I’ll always remember</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="memories/IMG-20251219-WA0005.jpg" alt="Memory 5">
+                        <p class="caption">laughing and meeting your friends.</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="memories/IMG-20251219-WA0006.jpg" alt="Memory 6">
+                        <p class="caption arabic">اسبايدر مان</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="memories/IMG-20251219-WA0007.jpg" alt="Memory 7">
+                        <p class="caption">اسبايدر تاااااني</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="memories/IMG-20251219-WA0008.jpg" alt="Memory 8">
+                        <p class="caption arabic">مشينا كتييير</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="memories/IMG-20251219-WA0009.jpg" alt="Memory 9">
+                        <p class="caption arabic">ماتشي ماتشي</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <video controls autoplay muted>
+                            <source src="memories/VID-20251219-WA0002.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="caption">All I want is to spend time with you, and only you</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <video controls autoplay muted>
+                            <source src="memories/VID-20251219-WA0003.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="caption">All I need is you by my side.</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <video controls autoplay muted>
+                            <source src="memories/VID-20251219-WA0004.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="caption">You make every second worth it</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <video controls autoplay muted>
+                            <source src="memories/VID-20251219-WA0005.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="caption">Nothing matters when I’m with you.</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <video controls autoplay muted>
+                            <source src="memories/VID-20251219-WA0006.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="caption">My heart chose you, and my future did too.</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <video controls autoplay muted>
+                            <source src="memories/VID-20251219-WA0007.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="caption arabic">بحبك يقرعه</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <video controls autoplay muted>
+                            <source src="memories/VID-20251219-WA0008.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="caption">🥰🥰🥰</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <video controls autoplay muted>
+                            <source src="memories/VID-20251219-WA0009.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="caption">May we continue our journey, hand in hand.</p>
+                    </div>
+                </div>
+                <button class="carousel-btn next" onclick="nextSlide()">&#10095;</button>
+            </div>
+            <p class="special-quote">Every moment with you is etched in my soul.</p>
+        </section>
+        
+        <section id="why">
+            <h2>Why I Love You</h2>
+            <ul>
+                <li>I love you cause being with you just feels right. </li>
+                <li>I love you cause with you I can just be myself.</li>
+                <li>I love you cause every little thing about you drives me crazy in the best way.</li>
+                <li>I can’t imagine my life without you.
+            </li>
+            </ul>
+        </section>
+        
+        <section id="letter">
+            <h2>My Love Letter to You</h2>
+            <p>My dearest Haneen,</p>
+            <p>The first time we met was the most amazing coincidence in my life. I never imagined I could love someone this deeply. Every laugh, every moment, every little thing you do makes my heart fuller.
+
+Spending time with you is all I ever want. Being with you, holding your hand, and just sharing life together  that’s where I feel complete.
+
+I dream of a future with you, building our lives, laughing, loving, and growing together. You are my heart, my joy, and everything beautiful in my life.
+
+Thank you for being in my life, and I pray we stay together forever.</p>
+            <p>Forever yours,
+<br>Ahmed</p>
+        </section>
+
+        <section id="timer">
+            <h2>Our Time Together</h2>
+            <div class="timer-wrapper" style="position: relative;">
+                <div class="timer-overlay" onclick="revealTimer()" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.8); display: flex; justify-content: center; align-items: center; cursor: pointer; z-index: 1; font-size: 24px; font-weight: bold; transition: opacity 0.5s ease;">Click Me 🌚 </div>
+                <div class="timer-container" style="filter: blur(5px); transition: filter 0.5s ease;">
+                    <div class="timer-subsection">
+                        <h3>How Long We've Known Each Other</h3>
+                        <p>Since March 5, 2020</p>
+                        <div id="known-timer-display" class="hearts">
+                         🫂  <span id="known-years">0</span> Years <span id="known-months">0</span> Months <span id="known-days">0</span> Days <span id="known-hours">0</span> Hours <span id="known-minutes">0</span> Minutes <span id="known-seconds">0</span> Seconds
+                        </div>
+                    </div>
+                    <div class="timer-subsection">
+                        <h3>How Long We've Been Together</h3>
+                        <p>Since April 28, 2025</p>
+                        <div id="together-timer-display" class="hearts">
+                        👩‍❤️‍💋‍👨 <span id="together-years">0</span> Years <span id="together-months">0</span> Months <span id="together-days">0</span> Days <span id="together-hours">0</span> Hours <span id="together-minutes">0</span> Minutes <span id="together-seconds">0</span> Seconds
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="forever">
+            <h2>Forever Together</h2>
+            <p>No matter what, my love for you grows stronger each day. Let's build a lifetime of memories.</p>
+            <p>Problems come and go, but us? We stay, we fix, and we grow even stronger.</p>
+       </section>
+    </main>
+    
+    <footer>
+        <p>Made with endless love by Ahmed &copy; 2025 </p>
+    </footer>
+
+    <script>
+        
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.transform = `translateX(${(i - index) * 100}%)`;
+                if (i === index) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+       
+        showSlide(currentSlide);
+
+        
+        const knownStartDate = new Date('2020-03-05T00:00:00');
+        const togetherStartDate = new Date('2025-04-28T00:00:00');
+
+        function updateTimer(startDate, prefix) {
+            const now = new Date();
+            const diff = now - startDate;
+
+            if (diff < 0) {
+
+                document.getElementById(prefix + '-years').textContent = '0';
+                document.getElementById(prefix + '-months').textContent = '0';
+                document.getElementById(prefix + '-days').textContent = '0';
+                document.getElementById(prefix + '-hours').textContent = '0';
+                document.getElementById(prefix + '-minutes').textContent = '0';
+                document.getElementById(prefix + '-seconds').textContent = '0';
+                return;
+            }
+
+            const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
+            const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24 * 30.44));
+            const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30.44)) / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById(prefix + '-years').textContent = years;
+            document.getElementById(prefix + '-months').textContent = months;
+            document.getElementById(prefix + '-days').textContent = days;
+            document.getElementById(prefix + '-hours').textContent = hours;
+            document.getElementById(prefix + '-minutes').textContent = minutes;
+            document.getElementById(prefix + '-seconds').textContent = seconds;
+        }
+
+        function updateAllTimers() {
+            updateTimer(knownStartDate, 'known');
+            updateTimer(togetherStartDate, 'together');
+        }
+
+        
+        setInterval(updateAllTimers, 1000);
+        updateAllTimers(); 
+
+        
+        function openSecret() {
+            document.getElementById('secret-modal').style.display = 'block';
+        }
+
+        function confirmSecret() {
+            document.getElementById('secret-modal').style.display = 'none';
+            document.getElementById('message-modal').style.display = 'block';
+            const video = document.getElementById('secret-video');
+            video.muted = false;
+            video.play();
+        }
+
+        function closeModal() {
+            document.getElementById('secret-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function closeMessageModal() {
+            const video = document.getElementById('secret-video');
+            video.pause();
+            video.muted = true;
+            document.getElementById('message-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function toggleDarkMode() {
+            const body = document.body;
+            const moonIcon = document.getElementById('moon-icon');
+            const sunIcon = document.getElementById('sun-icon');
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                moonIcon.style.opacity = '0';
+                sunIcon.style.opacity = '1';
+            } else {
+                moonIcon.style.opacity = '1';
+                sunIcon.style.opacity = '0';
+            }
+        }
+
+        function revealTimer() {
+            const overlay = document.querySelector('.timer-overlay');
+            const timerContainer = document.querySelector('.timer-container');
+            overlay.style.opacity = '0';
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 500);
+            timerContainer.style.filter = 'none';
+        }
+
+        document.getElementById('dark-mode-toggle').addEventListener('click', toggleDarkMode);
+    </script>
+</body>
+</html>
